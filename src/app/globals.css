@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  /* Template A — Cinematic Atelier */
+  --color-char: #141312;
+  --color-char-2: #1e1c1a;
+  --color-char-3: #2a2724;
+  --color-ivory: #f3ede3;
+  --color-ivory-dim: #bdb4a6;
+  --color-champ: #cdae74;
+
+  /* Template B — Modern Editorial Studio */
+  --color-porcelain: #f7f4ef;
+  --color-card: #ffffff;
+  --color-blush: #efe4d9;
+  --color-ink: #1b1a1f;
+  --color-muted: #5b5761;
+  --color-line: #e2dbd1;
+  --color-terra: #a3461f;
+  --color-terra-soft: #f3dfd3;
+
+  /* Generator UI */
+  --color-tool-bg: #f6f7f9;
+  --color-tool-ink: #15171c;
+  --color-tool-muted: #5d6470;
+  --color-tool-line: #dfe3e8;
+  --color-tool-accent: #2848d8;
+
+  --font-a-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-a-body: var(--font-manrope), system-ui, sans-serif;
+  --font-e-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-e-serif: var(--font-instrument), Georgia, serif;
+  --font-tool: var(--font-manrope), system-ui, sans-serif;
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 96px; }
+  body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+@layer utilities {
+  .fade-up { animation: fade-up 0.9s cubic-bezier(.2,.7,.2,1) both; }
+  .fade-up-2 { animation: fade-up 0.9s 0.12s cubic-bezier(.2,.7,.2,1) both; }
+  .fade-up-3 { animation: fade-up 0.9s 0.24s cubic-bezier(.2,.7,.2,1) both; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
